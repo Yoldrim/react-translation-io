@@ -28,7 +28,7 @@ if (!directory || !configPath) {
 const config = readFileJSON(configPath);
 const messagesPath = config.messages;
 sync(config, {})
-  .then(() => console.log('sync finished'))
+  .then(() => console.log('> Sync finished'))
   .catch((err) => {
     console.log('caught sync error');
     if (err && err.response && err.response.data) {
@@ -68,7 +68,7 @@ const addMessages = (messages) => {
     writeFileJSON(messagesPath, [...newMessages, ...jsonMessages]);
     if (autoSync) {
       sync(config, {})
-        .then(() => console.log('sync finished'))
+        .then(() => console.log('> auto sync finished'))
         .catch((err) => {
           console.log('caught sync error');
           console.log(err);

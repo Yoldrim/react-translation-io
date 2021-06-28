@@ -48,7 +48,6 @@ var _default = async (config, args) => {
     .catch((err) => {
       throw err;
     });
-  log.info('yeet yeet');
 
   if (sourceEdits.length > 0) {
     log.warn('Source has been edited on `translation.io`.');
