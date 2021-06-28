@@ -1,4 +1,10 @@
 #!/usr/local/bin/node
+
+//
+//  USAGE: $(npm bin)/observe {DIRECTORY TO WATCH} {PATH TO CONFIG} [--autoSync]
+//
+
+
 console.log('\n\n\n\n\n> Initiating translation observer B)');
 
 const fs = require('fs');
@@ -13,9 +19,10 @@ const directory = args[0];
 console.log(`> Observe directory ${directory}`);
 
 const configPath = args[1];
+const autoSync = args[2] === '--autoSync';
 
 if (!directory || !configPath) {
-  throw 'All who do not supply arguments must perish';
+  throw `Missing required arguments. Directory path: ${directory}. Config path: ${configPath}`;
 }
 
 const config = readFileJSON(configPath);
@@ -59,12 +66,14 @@ const addMessages = (messages) => {
   if (newMessages.length > 0) {
     console.log(`Writing new messages to file: ${JSON.stringify(newMessages)}`);
     writeFileJSON(messagesPath, [...newMessages, ...jsonMessages]);
-    sync(config, {})
-      .then(() => console.log('sync finished'))
-      .catch((err) => {
-        console.log('caught sync error');
-        console.log(err);
-      });
+    if (autoSync) {
+      sync(config, {})
+        .then(() => console.log('sync finished'))
+        .catch((err) => {
+          console.log('caught sync error');
+          console.log(err);
+        });
+    }
   }
 };
 
