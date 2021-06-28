@@ -1,0 +1,50 @@
+{
+  "name": "react-translation-io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "bin": {
+    "observe": "src/TranslationObserver.js"
+  },
+  "files": [
+    "src/TranslationObserver.js",
+    "src/localization.js",
+    "src/util.js",
+    "src/translation-io/",
+    "src/detectors/"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoldrim/react-translation-io.git"
+  },
+  "keywords": [
+    "translation-io"
+  ],
+  "author": "Harald Bergqvist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yoldrim/react-translation-io/issues"
+  },
+  "homepage": "https://github.com/Yoldrim/react-translation-io#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "mkdirp": "^1.0.4",
+    "react": "^17.0.2",
+    "sarcastic": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^27.0.5",
+    "jest": "^27.0.5"
+  }
+}
