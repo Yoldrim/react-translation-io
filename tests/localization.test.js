@@ -1,5 +1,8 @@
-const { getMessagesFromFile, createKeyFromString } =  require('../src/util');
-const { t, setTranslations } = require('../src/localization');
+const { getMessagesFromFile, createKeyFromString } =  require('../dist/util');
+const l = require('../dist/localization.js');
+const { t, setTranslations } = l;
+
+
 const path = require('path');
 const root = './tests';
 

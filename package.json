@@ -2,7 +2,7 @@
   "name": "react-translation-io",
   "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "directories": {
     "test": "tests"
   },
@@ -15,12 +15,10 @@
     "observe": "src/TranslationObserver.js"
   },
   "files": [
-    "src/TranslationObserver.js",
-    "src/localization.js",
-    "src/util.js",
-    "src/translation-io/",
-    "src/detectors/"
+    "src",
+    "types"
   ],
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "jest"
   },
